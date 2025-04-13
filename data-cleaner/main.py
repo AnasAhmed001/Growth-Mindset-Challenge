@@ -25,7 +25,7 @@ if files:
         df = df[selected_columns]
         st.dataframe(df.head())
 
-        if st.checkbox(f"📊 Show Chart - {file.name}") and not df.select_dtypes(include="number").empty():
+        if st.checkbox(f"📊 Show Chart - {file.name}") and not df.select_dtypes(include="number").empty:
             st.bar_chart(df.select_dtypes(include="number").iloc[:, :2])
 
         format_choice = st.radio(f"Covert {file.name} to", ["CSV", "Excel"], key=file.name)   
